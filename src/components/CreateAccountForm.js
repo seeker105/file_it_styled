@@ -52,7 +52,7 @@ export default class EmailLoginForm extends React.Component {
 
     let errorCode = null;
     let errorMessage = null;
-    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).catch((error) => {
+    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch((error) => {
       // Handle Errors here.
       errorCode = error.code;
       errorMessage = error.message;
