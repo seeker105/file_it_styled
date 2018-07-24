@@ -11,6 +11,18 @@ export const startGoogleLogin = () => {
   };
 };
 
+export const startCreateAccount = () => {
+  return () => {
+    return firebase.auth().createUserWithEmailAndPassword(email, password);
+  };
+};
+
+export const startEmailLogin = () => {
+  return () => {
+    return firebase.auth().signInWithEmailAndPassword(email, password);
+  };
+};
+
 export const logout = () => ({
   type: 'LOGOUT'
 });
